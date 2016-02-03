@@ -6,11 +6,12 @@ import (
 )
 
 
-type fizzBuzz struct {
+type FizzBuzz struct {
 	start, end int
 }
 
-func (this *fizzBuzz) printOn(printer Printer) {
+
+func (this *FizzBuzz) PrintOn(printer Printer) {
 	for i := this.start; i <= this.end; i++ {
 		msg := ""
 		divisibleByThree := i % 3 == 0
@@ -24,13 +25,13 @@ func (this *fizzBuzz) printOn(printer Printer) {
 		if(!divisibleByThree && !divisibleByFive) {
  			msg = strconv.Itoa(i)
 		}
-		printer.println(i, msg)
+		printer.Println(i, msg)
 	}
 }
 
 
 type Printer interface {
-	println(lineNumber int, line string)
+	Println(lineNumber int, line string)
 }
 
 
@@ -38,7 +39,7 @@ type ConsolePrinter struct {
 	Printer
 }
 
-func (p *ConsolePrinter) println(lineNumber int, line string) {
+func (p *ConsolePrinter) Println(lineNumber int, line string) {
 	fmt.Println(line)
 }
 
