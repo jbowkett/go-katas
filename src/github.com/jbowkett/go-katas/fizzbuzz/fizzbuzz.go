@@ -10,6 +10,9 @@ type FizzBuzz struct {
 	start, end int
 }
 
+func NewFizzBuzz(start int, end int) *FizzBuzz {
+	return &FizzBuzz{start, end}
+}
 
 func (this *FizzBuzz) PrintOn(printer Printer) {
 	for i := this.start; i <= this.end; i++ {
